@@ -12,7 +12,4 @@ else
   mvn clean install $MVN_ARGS
 fi
 
-# Fix source directory permissions
-fix-permissions ./
-
 echo -e "\n`pwd`" >> ../osgi/installedBundles

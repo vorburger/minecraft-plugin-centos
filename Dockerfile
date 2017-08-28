@@ -45,7 +45,7 @@ ADD https://s3.amazonaws.com/Minecraft.Download/versions/1.10.2/minecraft_server
 ADD https://repo.spongepowered.org/maven/org/spongepowered/spongevanilla/1.10.2-5.1.0-BETA-374/spongevanilla-1.10.2-5.1.0-BETA-374.jar /opt/app-root/spongevanilla.jar
 RUN echo "eula=true" > /opt/app-root/eula.txt
 
-RUN chown -R 1001:1001 /opt/app-root
+RUN chgrp -R 0 /opt/app-root && chmod -R g=u /opt/app-root
 USER 1001
 
 # Set the default CMD to print the usage of the language image
