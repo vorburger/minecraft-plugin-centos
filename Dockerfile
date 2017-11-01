@@ -29,7 +29,7 @@ ENV MAVEN_HOME /usr/share/maven
 
 # Add configuration files, bashrc and other tweaks
 COPY ./s2i/bin/ $STI_SCRIPTS_PATH
-COPY ./config/ /opt/app-root/src
+COPY ./config/ /opt/app-root/
 
 COPY ./server/ /opt/app-root
 ADD http://search.maven.org/remotecontent?filepath=com/google/guava/guava/18.0/guava-18.0.jar /opt/app-root/osgi/boot/3_guava-18.0.jar
