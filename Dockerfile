@@ -5,7 +5,7 @@
 
 FROM openshift/base-centos7
 
-EXPOSE 25565 25575
+EXPOSE 25565 25575 8080
 
 ENV JAVA_VERSON 1.8.0
 ENV MAVEN_VERSION 3.3.9
@@ -26,6 +26,9 @@ RUN curl -fsSL https://archive.apache.org/dist/maven/maven-3/$MAVEN_VERSION/bina
 
 ENV JAVA_HOME /usr/lib/jvm/java
 ENV MAVEN_HOME /usr/share/maven
+
+# Add Minecraft plugins built by Makefile
+COPY ./build/*.jar /opt/app-root/mods/
 
 # Add configuration files, bashrc and other tweaks
 COPY ./s2i/bin/ $STI_SCRIPTS_PATH
