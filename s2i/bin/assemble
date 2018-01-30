@@ -12,4 +12,6 @@ else
   mvn clean install $MVN_ARGS
 fi
 
+fix-permissions ./
+
 echo -e "\n`pwd`" >> ../osgi/installedBundles
