@@ -27,6 +27,8 @@ Booster Environment: <empty>
 the rest as already set preset
 ```
 
+If the launcher-backend deployments keeps restarting due to "kill signal from OS", then just Edit Health Checks to remove the Readiness / Liveness Probe.
+
 Install che [minishift addon](https://github.com/minishift/minishift-addons/tree/master/add-ons/che)
 Deploy che from  the catalog by going to <console url> and select `eclipse-che`
 
