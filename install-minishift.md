@@ -54,7 +54,6 @@ If apply not work, then deploy Che from the catalog by going to <console url> an
  
 Now open che-mini-che.192.168...nip.io, and Add or Import Project (the one wthich the launcher created earlier), from Git (connect your GitHub account is broken, in Che 6.3.0), Create, Open in IDE.
 
-
 ```
 Add to Project: Create project
 Project Name: mini-che
@@ -62,3 +61,7 @@ Che service domain name: <empty>
 GitHub client ID: <your id>
 GitHub client secret: <your created secret>
 ```
+
+Open the pom.xml and change the source-sync-maven-plugin configuration serverUri from ws://localhost:9191 to the Application Route shown on minecraft-server, e.g. ws://minecraft-server-test-minecraft.192.168.42.145.nip.io/ (NB replace http by: ws: and your IP).  Now synchronise the change made in the local Che workspace to the Minecrafter server pod by running the the source-sync-maven-plugin from the Terminal in Che:
+
+    mvn -Psync validate
