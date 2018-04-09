@@ -64,4 +64,5 @@ GitHub client secret: <your created secret>
 
 Open the pom.xml and change the source-sync-maven-plugin configuration serverUri from ws://localhost:9191 to the Application Route shown on minecraft-server, e.g. ws://minecraft-server-test-minecraft.192.168.42.145.nip.io/ (NB replace http by: ws: and your IP).  Now synchronise the change made in the local Che workspace to the Minecrafter server pod by running the the source-sync-maven-plugin from the Terminal in Che:
 
+    cd minecraft-test/
     mvn -Psync validate
